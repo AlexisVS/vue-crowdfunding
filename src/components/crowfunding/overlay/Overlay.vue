@@ -12,7 +12,18 @@
       </div>-->
       <!-- Back this project -->
       <div class="w-xsl w-overlay">
-        <svg class="absolute top-5 right-5 fill-current text-black cursor-pointer" fill="black" width="15" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z" fill="currentColor"/></svg>
+        <svg
+          class="absolute top-5 right-5 fill-current text-black cursor-pointer"
+          fill="black"
+          width="15"
+          height="15"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
+            fill="currentColor"
+          />
+        </svg>
         <h2 class="font-bold mt-2 text-xl text-black">Back this project</h2>
         <p
           class="text-dark-gray text-xs my-5"
@@ -27,7 +38,12 @@
 import Stand from "./Stand.vue";
 export default {
   name: "Overlay",
-  components: { Stand }
+  components: { Stand },
+  props: {
+    data: {
+      type: Object,
+    },
+  }
 }
 </script>
 
@@ -36,6 +52,6 @@ export default {
   margin: 0 !important;
 }
 .w-overlay {
-  width: 500px
+  width: 500px;
 }
 </style>

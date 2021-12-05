@@ -16,7 +16,7 @@ import Crowfunding from "./components/crowfunding/Crowfunding.vue";
 
 export default {
     name: "App",
-    components: { Menu, Crowfunding }
+    components: { Menu, Crowfunding },
 }
 </script>
 
