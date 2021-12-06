@@ -7,9 +7,7 @@
       <br />Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer to allow notepads, pen, and USB sticks to be stored under the stand.
     </p>
     <div class="flex flex-col w-full justify-center space-y-7">
-      <Stand />
-      <Stand />
-      <Stand />
+      <Stand v-for="stand in data" :key="'stand' + stand.id" :stand="stand" :handleOpenRewards="handleOpenRewards" />
     </div>
   </div>
 </template>
@@ -22,6 +20,7 @@ export default {
     data: {
       type: Object,
     },
+    handleOpenRewards: { type: Function}
   }
 }
 </script>
