@@ -47,7 +47,7 @@ export default {
       });
       this.crowfunding.stands = stands;
       this.crowfunding.statistics.backed.current = this.crowfunding.statistics.backed.current + data.amount;
-      this.crowfunding.statistics.backers = this.crowfunding.statistics.backers - 1;
+      this.crowfunding.statistics.backers = this.crowfunding.statistics.backers + 1;
     }
   },
   data () {
