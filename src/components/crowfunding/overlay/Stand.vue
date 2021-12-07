@@ -46,7 +46,7 @@ export default {
       let stand = {stand:{...this.stand}, amount: this.amount};
       stand.stand.left--;
       this.$emit('submitDataStand', stand)
-    }
+    },
   },
   props: {
     stand: { type: Object },

@@ -4,14 +4,14 @@
   >
     <div class="rounded-lg p-10 bg-gray-100 flex flex-col justify-center items-center relative">
       <!-- Thanks for your support -->
-      <!-- <div class="h-full w-96 font-medium flex flex-col justify-center items-center">
+      <div class="h-full w-96 font-medium flex flex-col justify-center items-center" v-show="openBackthisProject == false">
         <img src="../../../assets/icon-check.svg" alt="" class="mb-3">
         <h2 class="font-bold text-lg text-black my-4">Thanks for your support!</h2>
         <p class="text-sm text-dark-gray text-center mb-8 leading-7">Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.</p>
-        <button class="py-2 px-4 bg-moderate-cyan hover:bg-dark-cyan text-white font-medium rounded-full">Get it!</button>
-      </div>-->
+        <button class="py-2 px-4 bg-moderate-cyan hover:bg-dark-cyan text-white font-medium rounded-full" @click="handleOpenBackthisProject">Get it!</button>
+      </div>
       <!-- Back this project -->
-      <div class="w-xsl w-overlay">
+      <div class="w-xsl w-overlay" v-show="openBackthisProject == true">
         <svg
           @click="$emit('closeOverlay', true)"
           class="absolute top-5 right-5 fill-current text-black cursor-pointer"
@@ -75,13 +75,15 @@ export default {
   components: { Stand },
   data () {
     return {
-      // le input selection par l'id
-      // standSelected: null,
+      openBackthisProject : false,
     }
   },
   methods: {
     submitDataStand (data) {
       this.$emit('submitDataStand', data);
+    },
+    handleOpenBackthisProject () {
+      this.openBackthisProject = !this.openBackThisProject;
     }
   },
   props: {

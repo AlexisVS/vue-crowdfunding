@@ -37,14 +37,7 @@ export default {
       this.standSelected = stand
     },
     submitDataStand (data) {
-      let stands = [...this.crowfunding.stands].map(e => {
-        // if (e.id == data.stand.id) {
-        //   return e = data.stand;
-        // } else {
-        //   return e
-        // }
-        return e.id == data.stand.id ? data.stand : e
-      });
+      let stands = [...this.crowfunding.stands].map(e => e.id == data.stand.id ? data.stand : e);
       this.crowfunding.stands = stands;
       this.crowfunding.statistics.backed.current = this.crowfunding.statistics.backed.current + data.amount;
       this.crowfunding.statistics.backers = this.crowfunding.statistics.backers + 1;
